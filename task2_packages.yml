@@ -1,0 +1,28 @@
+---
+- name: Task2 - package management (apt)
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+      changed_when: false
+
+    - name: Install tree
+      ansible.builtin.apt:
+        name: tree
+        state: present
+
+    - name: Verify tree installed
+      ansible.builtin.shell: tree --version || true
+      register: tree_out
+      changed_when: false
+
+    - name: Debug tree output
+      ansible.builtin.debug:
+        var: tree_out.stdout_lines
+
+    - name: Remove tree
+      ansible.builtin.apt:
+        name: tree
+        state: absent

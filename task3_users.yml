@@ -1,0 +1,25 @@
+---
+- name: Task3 - users and groups
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Ensure group devops exists
+      ansible.builtin.group:
+        name: devops
+        state: present
+
+    - name: Create ansible_user
+      ansible.builtin.user:
+        name: ansible_user
+        group: devops
+        create_home: yes
+        shell: /bin/bash
+        state: present
+
+    - name: Ensure user has /home/ansible_user directory
+      ansible.builtin.file:
+        path: /home/ansible_user
+        state: directory
+        owner: ansible_user
+        group: devops
+        mode: '0755'

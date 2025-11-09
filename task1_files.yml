@@ -1,0 +1,33 @@
+---
+- name: Task1 - file operations
+  hosts: servers
+  become: yes
+  tasks:
+
+    - name: Ensure /tmp/demo_dir is present
+      ansible.builtin.file:
+        path: /tmp/demo_dir
+        state: directory
+        mode: '0755'
+
+    - name: Copy control node /etc/hosts to managed nodes
+      ansible.builtin.copy:
+        src: /etc/hosts
+        dest: /tmp/demo_dir/hosts_copy
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Show copied file on managed node
+      ansible.builtin.shell: ls -l /tmp/demo_dir && cat /tmp/demo_dir/hosts_copy | head -n 5
+      register: show_copy
+      changed_when: false
+
+    - name: Print listing (debug)
+      ansible.builtin.debug:
+        var: show_copy.stdout_lines
+
+    - name: Remove the directory
+      ansible.builtin.file:
+        path: /tmp/demo_dir
+        state: absent
