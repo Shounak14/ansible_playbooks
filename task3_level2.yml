@@ -1,7 +1,7 @@
 ---
 - name: Advanced user and group management
   hosts: all
-  become: yes   # needed to create users, groups, and modify sudoers
+  become: yes   
   vars:
     users_list:
       - name: alice
@@ -15,22 +15,18 @@
 
   tasks:
 
-    # 1️⃣ Ensure the /etc/sudoers.d directory exists
     - name: Ensure /etc/sudoers.d directory exists
-    # This prevents the error "Destination directory /etc/sudoers.d does not exist"
       ansible.builtin.file:
         path: /etc/sudoers.d
         state: directory
         mode: '0755'
 
-    # 2️⃣ Ensure groups exist
     - name: Ensure groups exist
       ansible.builtin.group:
         name: "{{ item.groups }}"
         state: present
       loop: "{{ users_list }}"
 
-    # 3️⃣ Create users with password and home directory
     - name: Create users with password and home directories
       ansible.builtin.user:
         name: "{{ item.name }}"
@@ -40,7 +36,6 @@
         create_home: yes
       loop: "{{ users_list }}"
 
-    # 4️⃣ Add sudo privileges to selected users
     - name: Add sudo privileges to selected users
       ansible.builtin.copy:
         dest: "/etc/sudoers.d/{{ item.name }}"
