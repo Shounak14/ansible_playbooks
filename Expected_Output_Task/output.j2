@@ -1,0 +1,7 @@
+output_data:
+{% for u in users %}
+  - id: {{ u.id | default('') }}
+    first_name: {{ (u.profile.first_name | default('')) }}
+    zip_code: {{ (u.profile.address.zip_code | default('')) }}
+    total_order: {{ (u.analytics.total_orders | default( (u.orders | length) | default(0) )) }}
+{% endfor %}

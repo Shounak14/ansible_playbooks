@@ -1,0 +1,21 @@
+output_data:
+  - id: user_001
+    first_name: Alice
+    zip_code: 12345
+    total_order: 1
+  - id: user_002
+    first_name: Brian
+    zip_code: 80203
+    total_order: 0
+  - id: user_003
+    first_name: Carla
+    zip_code: 73301
+    total_order: 3
+  - id: user_004
+    first_name: Derek
+    zip_code: 98101
+    total_order: 5
+  - id: user_005
+    first_name: Ella
+    zip_code: 60611
+    total_order: 2

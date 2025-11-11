@@ -1,0 +1,21 @@
+---
+- name: Convert payload.json
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    src_json: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/payload.json"         
+    dest_output: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/expected_output.yml" 
+  tasks:
+
+    - name: Read payload.json into a variable
+      set_fact:
+        users_data: "{{ lookup('file', src_json) | from_json }}"
+
+    - name: Render Jinja2 template to output file
+      template:
+        src: output.j2
+        dest: "{{ dest_output }}"
+      vars:
+        users: "{{ users_data.users | default([]) }}"
+
