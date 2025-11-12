@@ -1,21 +1,30 @@
 ---
-- name: Convert payload.json
+- name: Convert JSON into formatted YAML structure (no Jinja2)
   hosts: localhost
   connection: local
   gather_facts: no
   vars:
-    src_json: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/payload.json"         
-    dest_output: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/expected_output.yml" 
+    src_json: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/payload.json"
+
   tasks:
 
-    - name: Read payload.json into a variable
+    - name: Read the JSON file
       set_fact:
         users_data: "{{ lookup('file', src_json) | from_json }}"
 
-    - name: Render Jinja2 template to output file
-      template:
-        src: output.j2
-        dest: "{{ dest_output }}"
-      vars:
-        users: "{{ users_data.users | default([]) }}"
+    - name: Transform JSON into expected format
+      set_fact:
+         output_data: "{{ (output_data | default([])) + [ {
+           'id': item.id,
+           'first_name': item.profile.first_name,
+           'zip_code': item.profile.address.zip_code,
+           'total_order': item.analytics.total_orders
+           } ] }}"
+      loop: "{{ users_data.users }}"
+      loop_control:
+        loop_var: item
+
+    - name: Show the expected output
+      debug:
+        var: output_data
 
