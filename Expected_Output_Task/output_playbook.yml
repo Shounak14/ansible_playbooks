@@ -1,5 +1,5 @@
 ---
-- name: Convert JSON into formatted YAML structure (no Jinja2)
+- name: Convert JSON into expected format 
   hosts: localhost
   connection: local
   gather_facts: no
