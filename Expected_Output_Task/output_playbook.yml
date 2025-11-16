@@ -1,10 +1,10 @@
 ---
-- name: Convert JSON into expected format 
+- name: Convert JSON into expected format
   hosts: localhost
   connection: local
   gather_facts: no
   vars:
-    src_json: "/home/shounak/ansible_playbooks/ansible_playbooks/Expected_Output_Task/payload.json"
+    src_json: "{{playbook_dir}}/payload.json"
 
   tasks:
 
@@ -18,7 +18,9 @@
            'id': item.id,
            'first_name': item.profile.first_name,
            'zip_code': item.profile.address.zip_code,
-           'total_order': item.analytics.total_orders
+           'total_money_spent_on_orders': item.orders | map(attribute='total_amount') | sum,
+           'total_order': item.orders | length,
+           'list_of_all_orders_id': item.orders | map(attribute='order_id') | list,
            } ] }}"
       loop: "{{ users_data.users }}"
       loop_control:
