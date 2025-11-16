@@ -45,15 +45,57 @@
             "estimated_delivery": "2025-11-08"
           },
           "total_amount": 89.99
+        },
+        {
+          "order_id": "ORD-0101",
+          "order_date": "2025-11-11T10:12:00Z",
+          "status": "processing",
+          "items": [
+            {
+              "item_id": "SKU-150",
+              "name": "Bluetooth Keyboard",
+              "quantity": 1,
+              "price": 45.00,
+              "category": "Electronics"
+            }
+          ],
+          "shipping": {
+            "carrier": "FedEx",
+            "tracking_number": null,
+            "estimated_delivery": "2025-11-14"
+          },
+          "total_amount": 45.00
+        },
+        {
+          "order_id": "ORD-0102",
+          "order_date": "2025-11-09T08:40:00Z",
+          "status": "shipped",
+          "items": [
+            {
+              "item_id": "SKU-411",
+              "name": "Office Chair Cushion",
+              "quantity": 1,
+              "price": 29.99,
+              "category": "Home & Office"
+            },
+            {
+              "item_id": "SKU-412",
+              "name": "Desk Lamp",
+              "quantity": 1,
+              "price": 19.99,
+              "category": "Home & Office"
+            }
+          ],
+          "shipping": {
+            "carrier": "USPS",
+            "tracking_number": "9400110200885551112223",
+            "estimated_delivery": "2025-11-13"
+          },
+          "total_amount": 49.98
         }
-      ],
-      "analytics": {
-        "total_orders": 1,
-        "average_order_value": 89.99,
-        "last_activity": "2025-11-10T21:03:00Z",
-        "tags": ["repeat-customer", "email-subscriber"]
-      }
+      ]
     },
+
     {
       "id": "user_002",
       "profile": {
@@ -79,14 +121,50 @@
         "status": "inactive",
         "loyalty_points": 0
       },
-      "orders": [],
-      "analytics": {
-        "total_orders": 0,
-        "average_order_value": 0,
-        "last_activity": "2025-10-25T18:30:00Z",
-        "tags": ["inactive-user"]
-      }
+      "orders": [
+        {
+          "order_id": "ORD-0201",
+          "order_date": "2025-09-17T12:15:00Z",
+          "status": "delivered",
+          "items": [
+            {
+              "item_id": "SKU-510",
+              "name": "Travel Water Bottle",
+              "quantity": 1,
+              "price": 18.00,
+              "category": "Outdoor"
+            }
+          ],
+          "shipping": {
+            "carrier": "UPS",
+            "tracking_number": "1Z333AA10444488877",
+            "estimated_delivery": "2025-09-21"
+          },
+          "total_amount": 18.00
+        },
+        {
+          "order_id": "ORD-0202",
+          "order_date": "2025-08-05T09:10:00Z",
+          "status": "returned",
+          "items": [
+            {
+              "item_id": "SKU-602",
+              "name": "Running Shoes",
+              "quantity": 1,
+              "price": 79.99,
+              "category": "Fitness"
+            }
+          ],
+          "shipping": {
+            "carrier": "USPS",
+            "tracking_number": "9400110200880004445566",
+            "estimated_delivery": "2025-08-09"
+          },
+          "total_amount": 79.99
+        }
+      ]
     },
+
     {
       "id": "user_003",
       "profile": {
@@ -139,15 +217,50 @@
             "estimated_delivery": "2025-11-03"
           },
           "total_amount": 65.00
+        },
+        {
+          "order_id": "ORD-0301",
+          "order_date": "2025-11-07T07:45:00Z",
+          "status": "delivered",
+          "items": [
+            {
+              "item_id": "SKU-710",
+              "name": "Essential Oil Diffuser",
+              "quantity": 1,
+              "price": 32.00,
+              "category": "Wellness"
+            }
+          ],
+          "shipping": {
+            "carrier": "UPS",
+            "tracking_number": "1Z777BB10889922233",
+            "estimated_delivery": "2025-11-10"
+          },
+          "total_amount": 32.00
+        },
+        {
+          "order_id": "ORD-0302",
+          "order_date": "2025-11-03T15:25:00Z",
+          "status": "processing",
+          "items": [
+            {
+              "item_id": "SKU-811",
+              "name": "Kitchen Knife Set",
+              "quantity": 1,
+              "price": 54.99,
+              "category": "Home & Kitchen"
+            }
+          ],
+          "shipping": {
+            "carrier": "USPS",
+            "tracking_number": null,
+            "estimated_delivery": "2025-11-09"
+          },
+          "total_amount": 54.99
         }
-      ],
-      "analytics": {
-        "total_orders": 3,
-        "average_order_value": 72.35,
-        "last_activity": "2025-11-01T09:15:00Z",
-        "tags": ["vip", "fitness-lover"]
-      }
+      ]
     },
+
     {
       "id": "user_004",
       "profile": {
@@ -200,15 +313,50 @@
             "estimated_delivery": "2025-10-31"
           },
           "total_amount": 219.98
+        },
+        {
+          "order_id": "ORD-0401",
+          "order_date": "2025-11-06T13:15:00Z",
+          "status": "shipped",
+          "items": [
+            {
+              "item_id": "SKU-901",
+              "name": "Gaming Mouse",
+              "quantity": 1,
+              "price": 49.99,
+              "category": "Electronics"
+            }
+          ],
+          "shipping": {
+            "carrier": "FedEx",
+            "tracking_number": "784993012349122334455",
+            "estimated_delivery": "2025-11-11"
+          },
+          "total_amount": 49.99
+        },
+        {
+          "order_id": "ORD-0402",
+          "order_date": "2025-11-04T19:20:00Z",
+          "status": "processing",
+          "items": [
+            {
+              "item_id": "SKU-999",
+              "name": "LED Desk Strip Light",
+              "quantity": 1,
+              "price": 22.00,
+              "category": "Home & Office"
+            }
+          ],
+          "shipping": {
+            "carrier": "UPS",
+            "tracking_number": null,
+            "estimated_delivery": "2025-11-09"
+          },
+          "total_amount": 22.00
         }
-      ],
-      "analytics": {
-        "total_orders": 5,
-        "average_order_value": 210.10,
-        "last_activity": "2025-11-09T20:45:00Z",
-        "tags": ["tech-enthusiast", "high-spender"]
-      }
+      ]
     },
+
     {
       "id": "user_005",
       "profile": {
@@ -254,14 +402,48 @@
             "estimated_delivery": "2025-11-12"
           },
           "total_amount": 29.99
+        },
+        {
+          "order_id": "ORD-0501",
+          "order_date": "2025-11-10T16:55:00Z",
+          "status": "delivered",
+          "items": [
+            {
+              "item_id": "SKU-520",
+              "name": "Notebook Set",
+              "quantity": 1,
+              "price": 12.99,
+              "category": "Stationery"
+            }
+          ],
+          "shipping": {
+            "carrier": "USPS",
+            "tracking_number": "9400110200887772223330",
+            "estimated_delivery": "2025-11-13"
+          },
+          "total_amount": 12.99
+        },
+        {
+          "order_id": "ORD-0502",
+          "order_date": "2025-11-08T11:40:00Z",
+          "status": "shipped",
+          "items": [
+            {
+              "item_id": "SKU-612",
+              "name": "Electric Kettle",
+              "quantity": 1,
+              "price": 44.50,
+              "category": "Home & Kitchen"
+            }
+          ],
+          "shipping": {
+            "carrier": "FedEx",
+            "tracking_number": "9274890123400123499901",
+            "estimated_delivery": "2025-11-11"
+          },
+          "total_amount": 44.50
         }
-      ],
-      "analytics": {
-        "total_orders": 2,
-        "average_order_value": 34.50,
-        "last_activity": "2025-11-08T15:25:00Z",
-        "tags": ["home-decor", "returning-customer"]
-      }
+      ]
     }
   ]
 }
