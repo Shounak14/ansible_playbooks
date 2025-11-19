@@ -1,0 +1,3 @@
+---
+# vars file for test
+src_json: "{{playbook_dir}}/payload.json"
